@@ -6,3 +6,7 @@ venv311/
 __pycache__/
 checkpoints/
 logs/
+*.pdf
+"1712.06957v4 (1).pdf"
+"CSCI 1470 Deep Learning Final Project - HackMD.pdf"
+stress_test_images/

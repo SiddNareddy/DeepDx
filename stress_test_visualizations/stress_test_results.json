@@ -1,0 +1,87 @@
+{
+  "config": {
+    "workspace_root": "/Users/sidd/Desktop/cs1470_final_project",
+    "mura_root": "/Users/sidd/Desktop/cs1470_final_project/MURA-v1.1",
+    "output_dir": "/Users/sidd/Desktop/cs1470_final_project/stress_test_images",
+    "num_images": 64,
+    "seed": 42,
+    "device": "mps",
+    "batch_size": 8,
+    "img_size": 320,
+    "artifact_style": "screw",
+    "patch_size": 10,
+    "screw_length": 14,
+    "intensity": 255,
+    "threshold": 0.5,
+    "checkpoints": [
+      "/Users/sidd/Desktop/cs1470_final_project/checkpoints/best.pt"
+    ],
+    "predictions_csv": "/Users/sidd/Desktop/cs1470_final_project/stress_test_predictions.csv",
+    "viz_dir": "/Users/sidd/Desktop/cs1470_final_project/stress_test_visualizations",
+    "num_viz_examples": 6
+  },
+  "results": [
+    {
+      "checkpoint": "/Users/sidd/Desktop/cs1470_final_project/checkpoints/best.pt",
+      "n_images": 64,
+      "threshold": 0.5,
+      "clean_false_positive_rate": 0.109375,
+      "stress_false_positive_rate": 0.25,
+      "flip_to_abnormal_count": 10,
+      "flip_to_abnormal_rate": 0.15625,
+      "mean_clean_prob": 0.2542027972158394,
+      "mean_stress_prob": 0.3426263462170027,
+      "mean_prob_delta": 0.08842354900116334,
+      "clean_study_metrics": {
+        "overall": {
+          "AUROC": NaN,
+          "sensitivity": 0.0,
+          "specificity": 0.875,
+          "cohen_kappa": 0.0,
+          "n_studies": 56,
+          "n_positive": 0,
+          "n_negative": 56
+        },
+        "XR_WRIST": {
+          "AUROC": NaN,
+          "sensitivity": 0.0,
+          "specificity": 0.875,
+          "cohen_kappa": 0.0,
+          "n_studies": 56,
+          "n_positive": 0,
+          "n_negative": 56
+        }
+      },
+      "stress_study_metrics": {
+        "overall": {
+          "AUROC": NaN,
+          "sensitivity": 0.0,
+          "specificity": 0.75,
+          "cohen_kappa": 0.0,
+          "n_studies": 64,
+          "n_positive": 0,
+          "n_negative": 64
+        },
+        "XR_WRIST": {
+          "AUROC": NaN,
+          "sensitivity": 0.0,
+          "specificity": 0.75,
+          "cohen_kappa": 0.0,
+          "n_studies": 64,
+          "n_positive": 0,
+          "n_negative": 64
+        }
+      }
+    }
+  ],
+  "visualizations": {
+    "example_grid": "/Users/sidd/Desktop/cs1470_final_project/stress_test_visualizations/stress_examples_grid.png",
+    "example_grid_checkpoint": "/Users/sidd/Desktop/cs1470_final_project/checkpoints/best.pt",
+    "probability_shift_plots": [
+      "/Users/sidd/Desktop/cs1470_final_project/stress_test_visualizations/probability_shift_best.png"
+    ],
+    "failure_case_grids": [
+      "/Users/sidd/Desktop/cs1470_final_project/stress_test_visualizations/failure_case_grid_best.png"
+    ]
+  }
+}
