@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+Pillow
+scikit-learn
+torch
+torchvision
+jupyter
+ipykernel
+nbformat
+tqdm

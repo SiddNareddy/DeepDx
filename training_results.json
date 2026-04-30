@@ -1,0 +1,933 @@
+{
+  "history": {
+    "train_loss": [
+      0.2664289109991966,
+      0.24126156151219097,
+      0.22736654567919698,
+      0.22123629378277024,
+      0.2142354436796096,
+      0.20923166567015178,
+      0.20318262653802263,
+      0.19758274202208795,
+      0.1943524131035359,
+      0.18872581182551013,
+      0.18488549259919917,
+      0.1803710742291994,
+      0.17482074975678114,
+      0.1713482018905969,
+      0.16334759098570173,
+      0.16130485480951137,
+      0.15657755558342884,
+      0.15188330418979015,
+      0.14492393125101943,
+      0.13718682788770623
+    ],
+    "val_loss": [
+      0.23311233072985213,
+      0.24962215354809394,
+      0.22836565798828332,
+      0.21256827719436436,
+      0.2505721832349677,
+      0.22196542024124663,
+      0.22854605067746925,
+      0.2084218971979989,
+      0.19923612240964086,
+      0.22835301883814402,
+      0.24973674513683114,
+      0.22678768528555254,
+      0.254356767526872,
+      0.2256020302968115,
+      0.22884531435747243,
+      0.21521721615375258,
+      0.2584347293320464,
+      0.23549785409595225,
+      0.2399880703959352,
+      0.24119550833835246
+    ],
+    "lr": [
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "study_metrics": [
+      {
+        "overall": {
+          "AUROC": 0.8561715481171547,
+          "sensitivity": 0.703125,
+          "specificity": 0.9037656903765691,
+          "cohen_kappa": 0.6176451019095567,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.8677466863033874,
+          "sensitivity": 0.7010309278350515,
+          "specificity": 0.9357142857142857,
+          "cohen_kappa": 0.6575665399239544,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8366826156299841,
+          "sensitivity": 0.7052631578947368,
+          "specificity": 0.8585858585858586,
+          "cohen_kappa": 0.5655326863602432,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8670240585774058,
+          "sensitivity": 0.6770833333333334,
+          "specificity": 0.9288702928870293,
+          "cohen_kappa": 0.6202473762282374,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.892341678939617,
+          "sensitivity": 0.6804123711340206,
+          "specificity": 0.9642857142857143,
+          "cohen_kappa": 0.6723753935949619,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.843806485911749,
+          "sensitivity": 0.6736842105263158,
+          "specificity": 0.8787878787878788,
+          "cohen_kappa": 0.554713355396605,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.879271269177127,
+          "sensitivity": 0.75,
+          "specificity": 0.8326359832635983,
+          "cohen_kappa": 0.5850328227571115,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.8917525773195877,
+          "sensitivity": 0.7319587628865979,
+          "specificity": 0.8357142857142857,
+          "cohen_kappa": 0.570382153823388,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8675172780435939,
+          "sensitivity": 0.7684210526315789,
+          "specificity": 0.8282828282828283,
+          "cohen_kappa": 0.5973390101117615,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8954410739191073,
+          "sensitivity": 0.7760416666666666,
+          "specificity": 0.8828451882845189,
+          "cohen_kappa": 0.663987438372259,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9083946980854197,
+          "sensitivity": 0.7938144329896907,
+          "specificity": 0.8928571428571429,
+          "cohen_kappa": 0.6921506773056225,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8784688995215312,
+          "sensitivity": 0.7578947368421053,
+          "specificity": 0.8686868686868687,
+          "cohen_kappa": 0.6279168886521045,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8702928870292886,
+          "sensitivity": 0.6770833333333334,
+          "specificity": 0.9079497907949791,
+          "cohen_kappa": 0.5972679540802706,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.8997054491899853,
+          "sensitivity": 0.7010309278350515,
+          "specificity": 0.9357142857142857,
+          "cohen_kappa": 0.6575665399239544,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8242424242424241,
+          "sensitivity": 0.6526315789473685,
+          "specificity": 0.8686868686868687,
+          "cohen_kappa": 0.5235451147891084,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8889905857740585,
+          "sensitivity": 0.8072916666666666,
+          "specificity": 0.8326359832635983,
+          "cohen_kappa": 0.638946005635519,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9142120765832106,
+          "sensitivity": 0.7525773195876289,
+          "specificity": 0.9214285714285714,
+          "cohen_kappa": 0.6881696176835457,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8531632110579479,
+          "sensitivity": 0.8631578947368421,
+          "specificity": 0.7070707070707071,
+          "cohen_kappa": 0.5682950090070997,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.896988319386332,
+          "sensitivity": 0.7135416666666666,
+          "specificity": 0.9330543933054394,
+          "cohen_kappa": 0.6597734120498537,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.908321060382916,
+          "sensitivity": 0.711340206185567,
+          "specificity": 0.9714285714285714,
+          "cohen_kappa": 0.709736680955297,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8817650186071238,
+          "sensitivity": 0.7157894736842105,
+          "specificity": 0.8787878787878788,
+          "cohen_kappa": 0.5964799999999999,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9066858437935844,
+          "sensitivity": 0.703125,
+          "specificity": 0.9372384937238494,
+          "cohen_kappa": 0.6544397674884745,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9298969072164948,
+          "sensitivity": 0.7525773195876289,
+          "specificity": 0.9642857142857143,
+          "cohen_kappa": 0.7390957749686824,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.868367889420521,
+          "sensitivity": 0.6526315789473685,
+          "specificity": 0.898989898989899,
+          "cohen_kappa": 0.5543327278555401,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9103469316596932,
+          "sensitivity": 0.7708333333333334,
+          "specificity": 0.895397489539749,
+          "cohen_kappa": 0.6727770870239759,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9281296023564065,
+          "sensitivity": 0.8041237113402062,
+          "specificity": 0.9214285714285714,
+          "cohen_kappa": 0.734859785202864,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8858054226475279,
+          "sensitivity": 0.7368421052631579,
+          "specificity": 0.8585858585858586,
+          "cohen_kappa": 0.5968240434828946,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8939374128312414,
+          "sensitivity": 0.7552083333333334,
+          "specificity": 0.9079497907949791,
+          "cohen_kappa": 0.6717585898610391,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9172312223858616,
+          "sensitivity": 0.711340206185567,
+          "specificity": 0.9714285714285714,
+          "cohen_kappa": 0.709736680955297,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8688995215311004,
+          "sensitivity": 0.8,
+          "specificity": 0.8181818181818182,
+          "cohen_kappa": 0.6183133042645963,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8784867503486751,
+          "sensitivity": 0.6875,
+          "specificity": 0.9288702928870293,
+          "cohen_kappa": 0.6302490111971477,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9005891016200295,
+          "sensitivity": 0.7010309278350515,
+          "specificity": 0.9642857142857143,
+          "cohen_kappa": 0.6915952235150031,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.856140350877193,
+          "sensitivity": 0.6736842105263158,
+          "specificity": 0.8787878787878788,
+          "cohen_kappa": 0.554713355396605,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8975331241283124,
+          "sensitivity": 0.765625,
+          "specificity": 0.899581589958159,
+          "cohen_kappa": 0.6724382909823878,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9237113402061855,
+          "sensitivity": 0.7319587628865979,
+          "specificity": 0.9571428571428572,
+          "cohen_kappa": 0.7116349809885931,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8648591174906964,
+          "sensitivity": 0.8,
+          "specificity": 0.8181818181818182,
+          "cohen_kappa": 0.6183133042645963,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8889687935843793,
+          "sensitivity": 0.8020833333333334,
+          "specificity": 0.8158995815899581,
+          "cohen_kappa": 0.6160898563948815,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.91480117820324,
+          "sensitivity": 0.7422680412371134,
+          "specificity": 0.9285714285714286,
+          "cohen_kappa": 0.6871582123326418,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8597554492291334,
+          "sensitivity": 0.8631578947368421,
+          "specificity": 0.6565656565656566,
+          "cohen_kappa": 0.5174129353233832,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8965088912133891,
+          "sensitivity": 0.7552083333333334,
+          "specificity": 0.899581589958159,
+          "cohen_kappa": 0.6625944098351618,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9122974963181149,
+          "sensitivity": 0.7525773195876289,
+          "specificity": 0.9571428571428572,
+          "cohen_kappa": 0.7305389221556886,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8744284954811272,
+          "sensitivity": 0.7578947368421053,
+          "specificity": 0.8181818181818182,
+          "cohen_kappa": 0.5766897285790313,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9010416666666666,
+          "sensitivity": 0.765625,
+          "specificity": 0.8870292887029289,
+          "cohen_kappa": 0.6587264929066314,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9221649484536083,
+          "sensitivity": 0.7319587628865979,
+          "specificity": 0.95,
+          "cohen_kappa": 0.7031089853091903,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8779372674109516,
+          "sensitivity": 0.8,
+          "specificity": 0.797979797979798,
+          "cohen_kappa": 0.5978526629105985,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9057705718270571,
+          "sensitivity": 0.8020833333333334,
+          "specificity": 0.8702928870292888,
+          "cohen_kappa": 0.6747952365851257,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9314432989690722,
+          "sensitivity": 0.8350515463917526,
+          "specificity": 0.9,
+          "cohen_kappa": 0.7373864223978726,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.86528442317916,
+          "sensitivity": 0.7684210526315789,
+          "specificity": 0.8282828282828283,
+          "cohen_kappa": 0.5973390101117615,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9138554741980475,
+          "sensitivity": 0.7708333333333334,
+          "specificity": 0.9121338912133892,
+          "cohen_kappa": 0.6911075582997961,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9321060382916053,
+          "sensitivity": 0.7422680412371134,
+          "specificity": 0.9714285714285714,
+          "cohen_kappa": 0.7382412309098526,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8960127591706538,
+          "sensitivity": 0.8,
+          "specificity": 0.8282828282828283,
+          "cohen_kappa": 0.6285501542389107,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.9034823919107392,
+          "sensitivity": 0.8385416666666666,
+          "specificity": 0.8284518828451883,
+          "cohen_kappa": 0.6635951694382412,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.924079528718704,
+          "sensitivity": 0.8247422680412371,
+          "specificity": 0.8714285714285714,
+          "cohen_kappa": 0.6950703966474285,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8723019670388091,
+          "sensitivity": 0.8526315789473684,
+          "specificity": 0.7676767676767676,
+          "cohen_kappa": 0.6191234214156851,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.906751220362622,
+          "sensitivity": 0.7708333333333334,
+          "specificity": 0.9079497907949791,
+          "cohen_kappa": 0.6865178197527055,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9358615611192931,
+          "sensitivity": 0.7422680412371134,
+          "specificity": 0.9642857142857143,
+          "cohen_kappa": 0.7296577946768061,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8699627857522596,
+          "sensitivity": 0.8,
+          "specificity": 0.8282828282828283,
+          "cohen_kappa": 0.6285501542389107,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      },
+      {
+        "overall": {
+          "AUROC": 0.8964653068340307,
+          "sensitivity": 0.7864583333333334,
+          "specificity": 0.8661087866108786,
+          "cohen_kappa": 0.6555887600845074,
+          "n_studies": 431,
+          "n_positive": 192,
+          "n_negative": 239
+        },
+        "XR_WRIST": {
+          "AUROC": 0.9133284241531664,
+          "sensitivity": 0.8041237113402062,
+          "specificity": 0.9142857142857143,
+          "cohen_kappa": 0.7264604043337428,
+          "n_studies": 237,
+          "n_positive": 97,
+          "n_negative": 140
+        },
+        "XR_SHOULDER": {
+          "AUROC": 0.8636895268474216,
+          "sensitivity": 0.7684210526315789,
+          "specificity": 0.797979797979798,
+          "cohen_kappa": 0.5666418466120626,
+          "n_studies": 194,
+          "n_positive": 95,
+          "n_negative": 99
+        }
+      }
+    ],
+    "epoch_time_s": [
+      117.98034477233887,
+      113.64238691329956,
+      113.99181079864502,
+      113.99762868881226,
+      114.11089301109314,
+      114.47602009773254,
+      115.05990719795227,
+      114.1837170124054,
+      113.73924589157104,
+      114.08659410476685,
+      114.30914163589478,
+      114.49805498123169,
+      113.36802816390991,
+      114.45941734313965,
+      114.64807510375977,
+      114.38776755332947,
+      114.07841348648071,
+      114.36361742019653,
+      114.0723352432251,
+      114.03398299217224
+    ],
+    "train_time_s": [
+      115.58243203163147,
+      111.33193016052246,
+      111.74109125137329,
+      111.6800651550293,
+      111.81313967704773,
+      112.13990306854248,
+      112.75816750526428,
+      111.82525086402893,
+      111.4323673248291,
+      111.80888104438782,
+      111.99112296104431,
+      112.1849639415741,
+      111.10662078857422,
+      112.11340236663818,
+      112.3153920173645,
+      112.01610803604126,
+      111.79489850997925,
+      112.0338933467865,
+      111.77275466918945,
+      111.71192765235901
+    ],
+    "val_time_s": [
+      2.361687421798706,
+      2.299081563949585,
+      2.2395617961883545,
+      2.3067522048950195,
+      2.286997079849243,
+      2.325392961502075,
+      2.2910244464874268,
+      2.3478262424468994,
+      2.2961268424987793,
+      2.2671494483947754,
+      2.30755877494812,
+      2.302521228790283,
+      2.250216007232666,
+      2.335350751876831,
+      2.3221099376678467,
+      2.3589766025543213,
+      2.272995948791504,
+      2.3191208839416504,
+      2.288964033126831,
+      2.3113722801208496
+    ]
+  },
+  "final_metrics": {
+    "overall": {
+      "AUROC": 0.9163179916317993,
+      "sensitivity": 0.7708333333333334,
+      "specificity": 0.9121338912133892,
+      "cohen_kappa": 0.6911075582997961,
+      "n_studies": 431,
+      "n_positive": 192,
+      "n_negative": 239
+    },
+    "XR_WRIST": {
+      "AUROC": 0.9361561119293078,
+      "sensitivity": 0.7938144329896907,
+      "specificity": 0.95,
+      "cohen_kappa": 0.7594451336415924,
+      "n_studies": 237,
+      "n_positive": 97,
+      "n_negative": 140
+    },
+    "XR_SHOULDER": {
+      "AUROC": 0.8828282828282829,
+      "sensitivity": 0.7473684210526316,
+      "specificity": 0.8585858585858586,
+      "cohen_kappa": 0.6072456046883324,
+      "n_studies": 194,
+      "n_positive": 95,
+      "n_negative": 99
+    }
+  },
+  "ensemble_metrics": {
+    "overall": {
+      "AUROC": 0.9163179916317993,
+      "sensitivity": 0.7708333333333334,
+      "specificity": 0.9121338912133892,
+      "cohen_kappa": 0.6911075582997961,
+      "n_studies": 431,
+      "n_positive": 192,
+      "n_negative": 239
+    },
+    "XR_WRIST": {
+      "AUROC": 0.9361561119293078,
+      "sensitivity": 0.7938144329896907,
+      "specificity": 0.95,
+      "cohen_kappa": 0.7594451336415924,
+      "n_studies": 237,
+      "n_positive": 97,
+      "n_negative": 140
+    },
+    "XR_SHOULDER": {
+      "AUROC": 0.8828282828282829,
+      "sensitivity": 0.7473684210526316,
+      "specificity": 0.8585858585858586,
+      "cohen_kappa": 0.6072456046883324,
+      "n_studies": 194,
+      "n_positive": 95,
+      "n_negative": 99
+    }
+  },
+  "ensemble_summary_table": [
+    {
+      "group": "overall",
+      "AUROC": 0.9163179916317993,
+      "sensitivity": 0.7708333333333334,
+      "specificity": 0.9121338912133892,
+      "cohen_kappa": 0.6911075582997961,
+      "n_studies": 431,
+      "n_positive": 192,
+      "n_negative": 239
+    },
+    {
+      "group": "XR_WRIST",
+      "AUROC": 0.9361561119293078,
+      "sensitivity": 0.7938144329896907,
+      "specificity": 0.95,
+      "cohen_kappa": 0.7594451336415924,
+      "n_studies": 237,
+      "n_positive": 97,
+      "n_negative": 140
+    },
+    {
+      "group": "XR_SHOULDER",
+      "AUROC": 0.8828282828282829,
+      "sensitivity": 0.7473684210526316,
+      "specificity": 0.8585858585858586,
+      "cohen_kappa": 0.6072456046883324,
+      "n_studies": 194,
+      "n_positive": 95,
+      "n_negative": 99
+    }
+  ],
+  "best_metrics": {
+    "overall": {
+      "AUROC": 0.9103469316596932,
+      "sensitivity": 0.7708333333333334,
+      "specificity": 0.895397489539749,
+      "cohen_kappa": 0.6727770870239759,
+      "n_studies": 431,
+      "n_positive": 192,
+      "n_negative": 239
+    },
+    "XR_WRIST": {
+      "AUROC": 0.9281296023564065,
+      "sensitivity": 0.8041237113402062,
+      "specificity": 0.9214285714285714,
+      "cohen_kappa": 0.734859785202864,
+      "n_studies": 237,
+      "n_positive": 97,
+      "n_negative": 140
+    },
+    "XR_SHOULDER": {
+      "AUROC": 0.8858054226475279,
+      "sensitivity": 0.7368421052631579,
+      "specificity": 0.8585858585858586,
+      "cohen_kappa": 0.5968240434828946,
+      "n_studies": 194,
+      "n_positive": 95,
+      "n_negative": 99
+    }
+  },
+  "best_summary_table": [
+    {
+      "group": "overall",
+      "AUROC": 0.9103469316596932,
+      "sensitivity": 0.7708333333333334,
+      "specificity": 0.895397489539749,
+      "cohen_kappa": 0.6727770870239759,
+      "n_studies": 431,
+      "n_positive": 192,
+      "n_negative": 239
+    },
+    {
+      "group": "XR_WRIST",
+      "AUROC": 0.9281296023564065,
+      "sensitivity": 0.8041237113402062,
+      "specificity": 0.9214285714285714,
+      "cohen_kappa": 0.734859785202864,
+      "n_studies": 237,
+      "n_positive": 97,
+      "n_negative": 140
+    },
+    {
+      "group": "XR_SHOULDER",
+      "AUROC": 0.8858054226475279,
+      "sensitivity": 0.7368421052631579,
+      "specificity": 0.8585858585858586,
+      "cohen_kappa": 0.5968240434828946,
+      "n_studies": 194,
+      "n_positive": 95,
+      "n_negative": 99
+    }
+  ],
+  "best_epoch": 9,
+  "best_val_loss": 0.19923612240964086,
+  "ensemble_size": 5,
+  "ensemble_checkpoints": [
+    {
+      "epoch": 9,
+      "val_loss": 0.19923612240964086,
+      "path": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints/epoch_009_valloss_0.199236.pt"
+    },
+    {
+      "epoch": 8,
+      "val_loss": 0.2084218971979989,
+      "path": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints/epoch_008_valloss_0.208422.pt"
+    },
+    {
+      "epoch": 4,
+      "val_loss": 0.21256827719436436,
+      "path": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints/epoch_004_valloss_0.212568.pt"
+    },
+    {
+      "epoch": 16,
+      "val_loss": 0.21521721615375258,
+      "path": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints/epoch_016_valloss_0.215217.pt"
+    },
+    {
+      "epoch": 6,
+      "val_loss": 0.22196542024124663,
+      "path": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints/epoch_006_valloss_0.221965.pt"
+    }
+  ],
+  "class_weights": {
+    "XR_WRIST": {
+      "w_1": 0.591160787530763,
+      "w_0": 0.4088392124692371,
+      "n_abnormal": 3987,
+      "n_normal": 5765
+    },
+    "XR_SHOULDER": {
+      "w_1": 0.5025659386561642,
+      "w_0": 0.4974340613438358,
+      "n_abnormal": 4168,
+      "n_normal": 4211
+    }
+  },
+  "config": {
+    "workspace_root": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project",
+    "mura_root": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/MURA-v1.1",
+    "checkpoint_dir": "/oscar/data/ehr5_jun25/snareddy/cs1470_final_project/checkpoints",
+    "img_size": 320,
+    "batch_size": 8,
+    "lr": 0.0001,
+    "num_epochs": 20,
+    "rotation_deg": 30.0,
+    "study_types": [
+      "XR_WRIST",
+      "XR_SHOULDER"
+    ],
+    "seed": 42,
+    "smoke_test": false,
+    "num_workers": 8,
+    "device": "cuda",
+    "pretrained": true,
+    "ensemble_size_requested": 5
+  }
+}
