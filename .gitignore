@@ -12,4 +12,6 @@ venv311/
 *.pdf
 *.pyc
 *.ipynb
+*.sh
 pytorch_model_old.py
+.DS_Store
