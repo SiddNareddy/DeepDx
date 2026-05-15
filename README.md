@@ -2,6 +2,8 @@
 
 This repository bundles code and outputs for reproducing a **musculoskeletal abnormality detection** pipeline on the [MURA](https://arxiv.org/abs/1712.06957) benchmark: a **DenseNet-169**–based classifier for wrist and shoulder radiographs, followed by **stress tests** (artificial hardware-like noise on normal images) and **out-of-domain evaluation** on a pediatric wrist dataset (GRAZPED).
 
+This project was developed as part of a group final project for CSCI1470 - Deep Learning.
+
 ## Guiding Paper
 
 The approach and evaluation framing follow the MURA paper:
