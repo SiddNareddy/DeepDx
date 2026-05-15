@@ -1,13 +1,16 @@
-MURA-v1.1/
+__pycache__/
 .ipynb_checkpoints/
-*.pyc
+checkpoints/
+GRAZPEDWRI-DX/
+localvenv/
+logs/
+model_shifts/
+MURA-v1.1/
+stress_test_images/
 venv/
 venv311/
-__pycache__/
-checkpoints/
-logs/
 *.pdf
-"1712.06957v4 (1).pdf"
-"CSCI 1470 Deep Learning Final Project - HackMD.pdf"
-stress_test_images/
-GRAZPEDWRI-DX/
+*.pyc
+
+*.ipynb
+pytorch_model_old.py

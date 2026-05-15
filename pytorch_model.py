@@ -33,11 +33,12 @@ STUDY_TYPES = ["XR_WRIST", "XR_SHOULDER"]
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
 ADAM_BETAS = (0.9, 0.999)
+MODEL_CHOICES = ["densenet169", "resnet50", "efficientnet_b0"]
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Train DenseNet-169 on the wrist+shoulder MURA subset."
+        description="Train DenseNet-169, ResNet-50, or EfficientNet-B0 on the MURA subset."
     )
     parser.add_argument(
         "--workspace-root",
@@ -73,8 +74,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--num-epochs", type=int, default=20)
-    #parser.add_argument("--lr-patience", type=int, default=1)
-    #parser.add_argument("--lr-factor", type=float, default=0.1)
+    parser.add_argument("--lr-patience", type=int, default=1)
+    parser.add_argument("--lr-factor", type=float, default=0.1)
     parser.add_argument("--rotation-deg", type=float, default=30.0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
@@ -108,13 +109,32 @@ def parse_args() -> argparse.Namespace:
         help="Do not load ImageNet pretrained weights.",
     )
     parser.add_argument(
+        "--model",
+        choices=MODEL_CHOICES,
+        default="densenet169",
+        help="Backbone architecture to train.",
+    )
+    parser.add_argument(
         "--show-plot",
         action="store_true",
         help="Display the training curves after saving them.",
     )
+    parser.add_argument(
+        "--run-tag",
+        type=str,
+        default=None,
+        help=(
+            "Identifier appended to default output paths. "
+            "Defaults to model/pretrained/seed/timestamp."
+        ),
+    )
     args = parser.parse_args()
 
     args.workspace_root = args.workspace_root.expanduser().resolve()
+    if not args.run_tag:
+        pretrained_tag = "scratch" if args.disable_pretrained else "pretrained"
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        args.run_tag = f"{args.model}_{pretrained_tag}_seed{args.seed}_{timestamp}"
     args.mura_root = (
         args.mura_root.expanduser().resolve()
         if args.mura_root
@@ -123,17 +143,17 @@ def parse_args() -> argparse.Namespace:
     args.checkpoint_dir = (
         args.checkpoint_dir.expanduser().resolve()
         if args.checkpoint_dir
-        else args.workspace_root / "checkpoints"
+        else args.workspace_root / "checkpoints" / args.run_tag
     )
     args.results_path = (
         args.results_path.expanduser().resolve()
         if args.results_path
-        else args.workspace_root / "training_results.json"
+        else args.workspace_root / f"training_results_{args.run_tag}.json"
     )
     args.plot_path = (
         args.plot_path.expanduser().resolve()
         if args.plot_path
-        else args.workspace_root / "training_curves.png"
+        else args.workspace_root / f"training_curves_{args.run_tag}.png"
     )
     return args
 
@@ -308,11 +328,24 @@ def build_transforms(img_size: int, rotation_deg: float):
     return train_transform, val_transform
 
 
-def build_model(disable_pretrained: bool) -> nn.Module:
-    weights = None if disable_pretrained else models.DenseNet169_Weights.IMAGENET1K_V1
-    model = models.densenet169(weights=weights)
-    model.classifier = nn.Linear(model.classifier.in_features, 1)
-    return model
+def build_model(disable_pretrained: bool, model_name: str = "densenet169") -> nn.Module:
+    if model_name == "densenet169":
+        weights = None if disable_pretrained else models.DenseNet169_Weights.IMAGENET1K_V1
+        model = models.densenet169(weights=weights)
+        model.classifier = nn.Linear(model.classifier.in_features, 1)
+        return model
+    if model_name == "resnet50":
+        weights = None if disable_pretrained else models.ResNet50_Weights.IMAGENET1K_V2
+        model = models.resnet50(weights=weights)
+        model.fc = nn.Linear(model.fc.in_features, 1)
+        return model
+    if model_name == "efficientnet_b0":
+        weights = None if disable_pretrained else models.EfficientNet_B0_Weights.IMAGENET1K_V1
+        model = models.efficientnet_b0(weights=weights)
+        in_features = model.classifier[-1].in_features
+        model.classifier[-1] = nn.Linear(in_features, 1)
+        return model
+    raise ValueError(f"Unsupported model: {model_name}")
 
 
 def _progress_bar(loader, desc):
@@ -636,6 +669,8 @@ def main() -> None:
     print(f"  num_workers    : {num_workers}")
     print(f"  epochs         : {args.smoke_test_epochs if args.smoke_test else args.num_epochs}")
     print(f"  pretrained     : {not args.disable_pretrained}")
+    print(f"  model          : {args.model}")
+    print(f"  run_tag        : {args.run_tag}")
 
     train_images = build_image_df(args.mura_root, "train")
     valid_images = build_image_df(args.mura_root, "valid")
@@ -701,18 +736,18 @@ def main() -> None:
     print("study_types       :", list(study_types)[:4])
     print("study_paths[0]    :", study_paths[0])
 
-    model = build_model(args.disable_pretrained).to(device)
+    model = build_model(args.disable_pretrained, args.model).to(device)
     n_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"trainable parameters: {n_trainable / 1e6:.2f} M")
 
     criterion = WeightedBCEByStudyType(class_weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=ADAM_BETAS)
-    #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-     #   optimizer,
-     #   mode="min",
-     #   factor=args.lr_factor,
-     #   patience=args.lr_patience,
-    #)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer,
+        mode="min",
+        factor=args.lr_factor,
+        patience=args.lr_patience,
+    )
 
     history = {
         "train_loss": [],
@@ -766,7 +801,7 @@ def main() -> None:
             study_paths,
             study_types,
         )
-        #scheduler.step(val_loss)
+        scheduler.step(val_loss)
         lr_now = optimizer.param_groups[0]["lr"]
 
         epoch_elapsed = time.time() - t_epoch
@@ -812,6 +847,7 @@ def main() -> None:
                 "lr": args.lr,
                 "study_types": STUDY_TYPES,
                 "seed": args.seed,
+                "model": args.model,
             },
         }
         saved_path = tracker.consider(epoch=epoch, val_loss=val_loss, payload=ckpt_payload)
@@ -896,8 +932,8 @@ def main() -> None:
             "batch_size": args.batch_size,
             "lr": args.lr,
             "num_epochs": epochs_to_run,
-            #"lr_patience": args.lr_patience,
-            #"lr_factor": args.lr_factor,
+            "lr_patience": args.lr_patience,
+            "lr_factor": args.lr_factor,
             "rotation_deg": args.rotation_deg,
             "study_types": STUDY_TYPES,
             "seed": args.seed,
@@ -906,6 +942,8 @@ def main() -> None:
             "device": str(device),
             "pretrained": not args.disable_pretrained,
             "ensemble_size_requested": args.ensemble_size,
+            "model": args.model,
+            "run_tag": args.run_tag,
         },
     }
     with args.results_path.open("w") as f:
