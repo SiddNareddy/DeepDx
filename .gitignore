@@ -11,6 +11,5 @@ venv/
 venv311/
 *.pdf
 *.pyc
-
 *.ipynb
 pytorch_model_old.py
